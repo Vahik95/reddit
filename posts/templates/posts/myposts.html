@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h2> Here are {{ user.first_name }}'s all posts.</h2>
+    <a href="{% url 'posts:create' %}">New Post</a>
+    <br><br>
+    {% for post in posts.all %}
+       <a>UP</a> [{{ post.votes_total }}] <a>DOWN</a> - <a href="{{ post.url }}">{{ post.title }}</a>
+        <br>
+        {{ post.pub_date }} by {{ post.author.username }}
+        <br><br>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
