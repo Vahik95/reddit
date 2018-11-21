@@ -1,2 +1,2 @@
-web: gunicorn urls.wsgi
+web: gunicorn reddit.wsgi
 
